@@ -10,7 +10,7 @@ const App = () => {
     setTask("");
   }
   function deleteBtn(indexToDelete){
-    const newTodos = todos.filter((_,index) => index !== =indexToDelete);
+    const newTodos = todos.filter((_,index) => index !== indexToDelete);
     setTodos(newTodos);
   }
     return (
@@ -19,8 +19,9 @@ const App = () => {
     <input 
       type="text" 
       placeholder="Entera task"
+      value={task}
       onChange = {(e) => setTask(e.target.value)} 
-        />
+      />
     <button onClick={addTodo}>Add Todo</button>
     <ul>
       {todos.map((todo,index) => {
