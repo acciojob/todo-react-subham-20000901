@@ -9,8 +9,8 @@ const App = () => {
     setTodos([...todos,task]);
     setTask("");
   }
-  function deleteBtn(todo){
-    const newTodos = todos.filter(t => t !== todo);
+  function deleteBtn(indexToDelete){
+    const newTodos = todos.filter((_,index) => index !== =indexToDelete);
     setTodos(newTodos);
   }
     return (
@@ -25,8 +25,11 @@ const App = () => {
     <ul>
       {todos.map((todo,index) => {
         return (
-          <li key={index}>{todo}</li>
-          <button onClick={() => deleteBtn(todo)}>Delete</button>
+          <li key={index}>
+           {todo}
+          <button onClick={() => deleteBtn(index)}>Delete</button>
+        </li>
+          
         )
       })}   
     </ul>
