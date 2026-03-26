@@ -18,13 +18,13 @@ const App = () => {
       onChange = {(e) => setTask(e.target.value)} 
         />
     <button onClick={addTodo}>Add Todo</button>
-    <ol>
+    <ul>
       {todos.map((todo,index) => {
         return (
           <li key={index}>{todo}</li>
         )
       })}   
-    </ol>
+    </ul>
     </div>
   )
 }
