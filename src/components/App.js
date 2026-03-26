@@ -9,6 +9,10 @@ const App = () => {
     setTodos([...todos,task]);
     setTask("");
   }
+  function deleteBtn(todo){
+    const newTodos = todos.filter(t => t !== todo);
+    setTodos(newTodos);
+  }
     return (
     <div>
         {/* Do not remove the main div */}
@@ -22,6 +26,7 @@ const App = () => {
       {todos.map((todo,index) => {
         return (
           <li key={index}>{todo}</li>
+          <button onClick={() => deleteBtn(todo)}>Delete</button>
         )
       })}   
     </ul>
